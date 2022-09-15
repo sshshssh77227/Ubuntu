@@ -50,11 +50,13 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get upgrade
-    - name: Installing XUBUNTU Desktop Environment
-      run: sudo bash xubuntu.sh
+    - name: Installing Desktop Environment
+      run: sudo bash Ubuntu.sh
     - name: Setting up Ngrok
       run:  bash Setup.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
-    - name: IP for Connect to your SSH.
+    - name: Starting Chrome Remote Desktop
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+    - name: IP for Connect to your SSH
       run: bash Ip.sh "${{ github.event.inputs.username }}"
     - name: Keep Alive
       run: ping 127.0.0.1 > null
