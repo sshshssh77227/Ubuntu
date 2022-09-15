@@ -1,3 +1,4 @@
+# Add user & setup ngrok
 sudo useradd -m $(jq -r '.inputs.username' $GITHUB_EVENT_PATH)
 sudo adduser $(jq -r '.inputs.username' $GITHUB_EVENT_PATH) sudo
 echo $(jq -r '.inputs.username' $GITHUB_EVENT_PATH):$(jq -r '.inputs.password' $GITHUB_EVENT_PATH) | sudo chpasswd
