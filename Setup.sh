@@ -11,3 +11,4 @@ rm -f .ngrok.log
 ./ngrok authtoken $(jq -r '.inputs.authtoken' $GITHUB_EVENT_PATH)
 ./ngrok tcp 22 --log ".ngrok.log" &
 sleep 10
+echo "Ngrok Setup Completeed"
