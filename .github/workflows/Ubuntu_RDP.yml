@@ -55,7 +55,7 @@ jobs:
     - name: Setting up Ngrok
       run:  bash Setup.sh "${{ env.NGROK_TOKEN }}" "${{ env.ComputerName }}" "${{ github.event.inputs.username }}" "${{ env.Password }}"
     - name: Starting Chrome Remote Desktop
-      run: DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AVMBsJg02sBu24HBpZwq4mVr_rT0P9BP2ANvCa1gJrGzsI44nlKtkovRtlGMhSNvFqzpsQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname)
+      run: DISPLAY= /opt/google/chrome-remote-desktop/start-host --code="4/0AVMBsJgCC-97prcnyHW_spgcDK3P_0HZUy7f5Zv_Z9Kzg-0bS8il2xU_9T6ylluLT_tvLQ" --redirect-url="https://remotedesktop.google.com/_/oauthredirect" --name=$(hostname) -pin=123456
     - name: IP for Connect to your SSH
       run: bash Ip.sh "${{ github.event.inputs.username }}"
     - name: Keep Alive
