@@ -10,7 +10,7 @@ function install_desktop_env {
 
   if [[ "$INSTALL_XFCE" != "yes" && "$INSTALL_CINNAMON" != "yes" ]] ; then
     # neither XFCE nor cinnamon specified; install both
-    INSTALL_XFCE=yes
+    INSTALL_XFCE=no
     INSTALL_CINNAMON=yes
   fi
 
